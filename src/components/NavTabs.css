@@ -2,6 +2,7 @@
     display: flex;
     justify-content: left;
     margin-bottom: 2px;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
 }
 
 .nav-tabs button {
@@ -11,8 +12,21 @@
     background-color: transparent;
     cursor: pointer;
     font-size: 1rem;
+    flex-grow: 1; /* Allows buttons to grow and take up available space */
+    text-align: center; /* Centers text on smaller screens */
 }
 
 .nav-tabs .active {
     border-bottom: 2px solid blue;
+}
+
+@media (max-width: 640px) {
+    .nav-tabs {
+        justify-content: center; /* Center align on smaller screens */
+    }
+
+    .nav-tabs button {
+        font-size: 0.875rem; /* Smaller font size on small screens */
+        margin: 5px 0; /* Adjust margins for smaller screens */
+    }
 }

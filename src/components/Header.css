@@ -11,3 +11,37 @@
     color: green;
     font-size: 1.2rem;
 }
+@media (max-width: 640px) {
+    .search-container {
+      display: none;
+    }
+    .name {
+      font-size: 1.5rem; /* Adjust the size for smaller screens */
+      text-align: center; /* Center the text for better appearance */
+    }
+  }
+  
+  @media (min-width: 641px) {
+    .name {
+      font-size: 2.5rem;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .name {
+      font-size: 3rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .name {
+      font-size: 3.5rem;
+    }
+  }
+  
+@media (max-width: 640px) {
+    .search-container {
+      display: none;
+    }
+  }
+  

@@ -39,41 +39,9 @@ const Chart = () => {
     });
   };
 
-  // useEffect(() => {
-  //   const getDateRange = () => {
-  //     const { days, weeks, months, years } = chartConfig[filter];
-
-  //     const endDate = new Date();
-  //     const startDate = createDate(endDate, -days, -weeks, -months, -years);
-
-  //     const startTimestampUnix = convertDateToUnixTimestamp(startDate);
-  //     const endTimestampUnix = convertDateToUnixTimestamp(endDate);
-  //     return { startTimestampUnix, endTimestampUnix };
-  //   };
-
-  //   const updateChartData = async () => {
-  //     try {
-  //       const { startTimestampUnix, endTimestampUnix } = getDateRange();
-  //       const resolution = chartConfig[filter].resolution;
-  //       const result = await fetchHistoricalData(
-  //         stockSymbol,
-  //         resolution,
-  //         startTimestampUnix,
-  //         endTimestampUnix
-  //       );
-  //       setData(formatData(result));
-  //     } catch (error) {
-  //       setData([]);
-  //       console.log(error);
-  //     }
-  //   };
-
-  //   updateChartData();
-  // }, [stockSymbol, filter]);
-
   return (
     <Card>
-      <ul className="flex absolute top-1 right-2 z-40">
+      <ul className="flex absolute top-0 right-2 z-40 ">
         {Object.keys(chartConfig).map((item) => (
           <li key={item}>
             <ChartFilter
@@ -87,7 +55,7 @@ const Chart = () => {
         ))}
       </ul>
       <ResponsiveContainer>
-        <AreaChart data={formatData(data)}>
+        <AreaChart data={formatData(data)} className=" border-gray-800 top-5">
           <defs>
             <linearGradient id="chartColor" x1="0" y1="0" x2="0" y2="1">
               <stop
@@ -116,7 +84,7 @@ const Chart = () => {
             type="monotone"
             dataKey="value"
             stroke="#4F46E5" // Set the line color to match the design
-            strokeWidth={2} // Set line thickness
+            strokeWidth={1} // Set line thickness
             fill="url(#chartColor)"
             fillOpacity={1}
           />

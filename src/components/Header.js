@@ -5,6 +5,7 @@ import "./Header.css";
 import Overview from "./Overview";
 import StockContext from "../context/StockContext";
 import { mockCompanyDetails } from "../constants/mock";
+
 const Header = ({ name }) => {
   const { stockSymbol } = useContext(StockContext);
 
@@ -15,15 +16,18 @@ const Header = ({ name }) => {
   return (
     <>
       <div className="header">
-        <h1>
-          63,179.71
-          <span style={{ fontSize: 12, bottom: 20 }}>USD</span>
-        </h1>
+        <div style={{ display: "flex", flexDirection: "row", border: 20 }}>
+          <h1>63,179.71</h1>
+          <span style={{ fontSize: 15, color: "gray" }}>USD</span>
+        </div>
         <p className="percentage">+2,161.42 (3.54%)</p>
       </div>
       <div className="xl:px-32">
-        <h1 className="text-5xl">{name}</h1>
-        <Search />
+        {/* Add a class to the name */}
+        <h1 className="name">{name}</h1>
+        <div className="search-container">
+          <Search />
+        </div>
       </div>
       <ThemeIcon />
     </>
